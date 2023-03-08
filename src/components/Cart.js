@@ -1,9 +1,12 @@
+   import '../styles/Cart.css'
    function Cart() {
-    let plants = [{name:"Monstera",price:8},{name:"Lierre",price:10},{name:"Fleurs",price:15}]
+    let plants = [{id:0,name:"Monstera",price:8},{id:1,name:"Lierre",price:10},{id:2,name:"Fleurs",price:15}]
     return(
-        <ul>
-          {plants.map(x => <li>{x.name} {x.price}€</li>)  }
-        </ul>
+        <div className="lmj-cart">
+            <ul>
+            {plants.map(x => <li key={x.id}>{x.name} {x.price}€</li>)  }
+            </ul>  
+        </div>
     )}
 
 export default Cart
