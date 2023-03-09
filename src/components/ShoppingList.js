@@ -1,17 +1,13 @@
 import { plantList } from "../datas/plantList"
-import CareScale from "./CareScale"
 import '../styles/ShoppingList.css'
+import PlantItem from './PlantItem'
 
+//Carescale est un enfant de ShoppingList
 function ShoppingList() {
     return (
         <ul className="lmj-plant-list">
-            {plantList.map((plant,index) => (               
-                <li key={index} className='lmj-plant-item'>
-                    {plant.name} 
-                    {plant.isSpecialOffer && <div className="lmj-sales">Soldes</div>}
-                    <CareScale careType='light' scaleValue={plant.light} />
-                    <CareScale careType='water' scaleValue={plant.water} />
-                </li>
+            {plantList.map((plant) => (
+                <PlantItem key={plant.id} name={plant.name} id={plant.id} light={plant.light} water={plant.water} isSpecialOffer={plant.isSpecialOffer} cover={plant.cover}/>               
             ))}
         </ul>
     )
