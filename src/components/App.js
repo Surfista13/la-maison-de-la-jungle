@@ -5,7 +5,7 @@ import ShoppingList from './ShoppingList'
 import ListCategory from './Category'
 
 function App() {
-    return <div><Banner /> <Cart /> <ShoppingList /></div>
+    return <div><Banner /> <Cart /> <ListCategory /><ShoppingList /></div>
 }
 
 export default App

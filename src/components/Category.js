@@ -1,12 +1,14 @@
-import '../datas/plantList.js'
+import {plantList} from '../datas/plantList.js'
 
 function ListCategory(){
     
-    liste = plantList.filter((x,i,a) => a.indexOf(x) === i)
+    let uniqueCategory = plantList
+    .map((item) => item.category)
+    .filter((value, index, self) => self.indexOf(value) === index);
 
     return (
         <ul>
-            {liste.map(x => <li>{x.catgeory}</li>)}
+            {uniqueCategory.map(x => <li key={x}>{x}</li>)}
         </ul>
     )
 }
