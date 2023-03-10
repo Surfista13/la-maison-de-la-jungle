@@ -1,10 +1,11 @@
-import CareScale from "./CareScale"
+import {CareScale,AlerteScale} from "./CareScale"
 import '../styles/PlanItems.css'
+import { getAllByPlaceholderText } from "@testing-library/react"
 
 function PlantItem(props){
     const {name,cover,light,water,isSpecialOffer,id} = props
     return (
-        <li key={id} className='lmj-plant-item' onClick={(e)=>handleClick(name)}>
+        <li key={id} className='lmj-plant-item'>
             <img className='lmj-plant-item-cover' src={cover}/>
             {name} 
             {isSpecialOffer && <div className="lmj-sales">Soldes</div>}
@@ -14,10 +15,6 @@ function PlantItem(props){
             </div>        
         </li>
     )
-}
-
-function handleClick(name){
-    alert(`Vous allez acheter ${name}`)
 }
 
 export default PlantItem
