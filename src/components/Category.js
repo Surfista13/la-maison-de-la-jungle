@@ -8,9 +8,9 @@ function ListCategory({category,updateCategory}){
 
     return (        
         <select onChange={(e)=>updateCategory(e.target.value)}>
-            <option value='0'>Toutes Catégories</option>
+            <option  value='vide'>Toutes Catégories</option>
             {uniqueCategory.map((elt) =>
-               <option value={elt}>{elt}</option> 
+               <option key={elt} value={elt}>{elt}</option> 
              )
             }
         </select>

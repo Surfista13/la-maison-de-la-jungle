@@ -7,7 +7,7 @@ function ShoppingList({cart,updateCart,category}) {
     return (
         <div className='lmj-shopping-list'>   
             <ul className="lmj-plant-list">
-                {plantList.filter((plant) => category == 0 ? plant : plant.category == category).map((plant) => (
+                {plantList.filter((plant) => category === 'vide' ? plant : plant.category === category).map((plant) => (
                     <div>
                         <PlantItem key={plant.id} name={plant.name} id={plant.id} light={plant.light} water={plant.water} isSpecialOffer={plant.isSpecialOffer} cover={plant.cover} price={plant.price}/>
                         <button onClick={() => addToCart(cart,updateCart,plant)}>
